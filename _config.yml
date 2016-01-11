@@ -69,5 +69,5 @@ theme: candy
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-    repo: git@github.com:zp1112/bishe.git
-    branch: gh-pages
+  repo: git@github.com:zp1112/bishe.git
+  branch: gh-pages
