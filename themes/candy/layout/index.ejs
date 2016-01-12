@@ -3,7 +3,7 @@
 <div class="bg">
   <%- partial('partial/center')%>
   <div class="timeline">
-    <% page.posts.each(function(post){ %>
+    <% site.posts.each(function(post){ %>
     <%- partial('partial/left_article', {post: post, index: true}) %>
     <% }) %>
   </div>
