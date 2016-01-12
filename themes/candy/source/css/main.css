@@ -581,6 +581,7 @@ a{
     bottom: 80px;
     position: fixed;
     margin-left: 1px;
+    z-index: 110;
 }
 
 .bottom:before {
@@ -618,31 +619,83 @@ a{
 .circle {
     width: 20px;
     height: 20px;
-    border: 1px solid #A2938A;
+    border: 2px solid #A2938A;
     border-radius: 50%;
     position: absolute;
     left: -10px;
     top: 10px;
+    transition: all .5s;
+    cursor: pointer;
+}
+.bottom:hover .circle{
+    transform: scale(1.7);
 }
 
 .left_box, .right_box {
-    width: 120px;
+    width: 140px;
     height: 50px;
     border-radius: 30px;
-    border: 2px solid #A2938A;
-    position: absolute
+    border: 1px solid #A2938A;
+    position: absolute;
+    z-index: 120;
+    transition: all .5s;
 }
 
-.left_box {
-    left: -173px;
+.box{
     top: -5px;
+    cursor: pointer;
+    background:  rgba(163,149,140,0);
+    transition: all .5s;
 }
-
+.left_box {
+    left: -190px;
+}
+.left_box:hover{
+    background:  rgba(163,149,140,1);
+}
+.left_box span{
+    float: left;
+    display: block;
+    width: 30px;
+    line-height: 22px;
+    margin-left: 10px;
+    color: #A3958C;
+}
+.left_box strong{
+    float: right;
+    font-size: 34px;
+    color: #A3958C;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+.left_box:hover strong,.left_box:hover span{
+    color: #fff;
+}
 .right_box {
     left: 50px;
-    top: -5px;
 }
-
+.right_box strong{
+    float: left;
+    font-size: 34px;
+    color: #A3958C;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+.right_box span{
+    float: left;
+    display: block;
+    width: 70px;
+    line-height: 16px;
+    margin-left: 4px;
+    color: #A3958C;
+    font-size: 12px;
+}
+.right_box:hover strong,.right_box:hover span{
+    color: #fff;
+}
+.right_box:hover{
+    background:  rgba(163,149,140,1);
+}
 .timeline {
     width: 88%;
     max-width: 1200px;
@@ -657,6 +710,8 @@ a{
 .post .mid {
     width: 120px;
     margin: 0 auto;
+    z-index: 110;
+    position: relative;
 }
 
 .post time {

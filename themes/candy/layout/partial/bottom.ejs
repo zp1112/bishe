@@ -1,9 +1,10 @@
 <div class="bottom">
-  <div class="left_box">
-
+  <div class="box left_box">
+    <span><%- date(Date.now(), 'MMMM YYYY') %></span>
+    <strong><%- date(Date.now(), 'D') %></strong>
   </div>
-  <div class="right_box">
-
+  <div class="box right_box">
+    <strong><%= site.posts.length%></strong><span>POSTS AT HOME PAGE</span>
   </div>
   <div class="l line1"></div>
   <div class="l line2"></div>
