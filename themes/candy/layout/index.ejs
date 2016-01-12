@@ -1,0 +1,13 @@
+<%- partial('partial/head') %>
+<body>
+<div class="bg">
+  <%- partial('partial/center')%>
+  <div class="timeline">
+    <% page.posts.each(function(post){ %>
+    <%- partial('partial/left_article', {post: post, index: true}) %>
+    <% }) %>
+  </div>
+  <%- partial('partial/foot') %>
+</div>
+</body>
+</html>

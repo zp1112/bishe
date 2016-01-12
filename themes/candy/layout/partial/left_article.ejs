@@ -1,0 +1,41 @@
+<div class="post">
+  <div class="mid">
+    <time class="time_dot_date" datetime="<%= date(post.date) %>">
+      <%= date(post.date) %>
+      <div class="time_dot"></div>
+    </time>
+
+  </div>
+  <div class="left">
+    <div class="arrow_side"></div>
+    <article>
+      <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <section>
+        <% if (post.excerpt && index){ %>
+        <%- post.excerpt %>
+
+          <a class="article-more-link" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+
+        <% } else { %>
+        <%- post.content %>
+        <% } %>
+      </section>
+      <section class="meta">
+        城市: <%- list_categories(post.categories, {
+          show_count: false,
+          style: 'none'
+        }) %>
+        , 标签: <%- list_tags(post.tags, {
+          show_count: false,
+          style: 'none'
+        }) %>
+      </section>
+    </article>
+  </div>
+  <div class="right">
+    <div class="arrow_side"></div>
+    <div class="figure">
+      <div class="bg_img" style="background-image: url(/1.jpg)"></div>
+    </div>
+  </div>
+</div>
