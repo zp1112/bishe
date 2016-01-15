@@ -1,12 +1,12 @@
 <div class="post">
-  <div class="mid">
+  <div class="mid" data-600="opacity:0;" data-680="opacity:1;" data-800="opacity:0;">
     <time class="time_dot_date" datetime="<%= date(post.date) %>">
       <%= date(post.date) %>
       <div class="time_dot"></div>
     </time>
 
   </div>
-  <div class="left">
+  <div class="left" data-0="opacity:0;margin-left:-120px;margin-top:50px;" data-600="opacity:1;margin-left:80px;margin-top:0;">
     <div class="arrow_side"></div>
     <article>
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
@@ -34,7 +34,7 @@
   </div>
   <div class="right">
     <div class="arrow_side"></div>
-    <div class="figure">
+    <div class="figure"  data-0="opacity:0;left:160px;top:50px;" data-600="opacity:1;left:0;top:0;">
       <div class="bg_img" style="background-image: url(/1.jpg)"></div>
     </div>
   </div>

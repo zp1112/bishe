@@ -2,6 +2,7 @@
 <body>
 <div class="bg">
   <%- partial('partial/center')%>
+  <%- partial('partial/info')%>
   <div class="timeline">
     <% site.posts.each(function(post){ %>
     <%- partial('partial/left_article', {post: post, index: true}) %>
