@@ -1,12 +1,29 @@
 <%- partial('partial/head') %>
 <body>
 <div class="bg">
-  <%- partial('partial/center')%>
-  <%- partial('partial/info')%>
+  <%- partial('partial/center') %>
+  <%- partial('partial/info') %>
   <div class="timeline">
-    <% site.posts.each(function(post){ %>
-    <%- partial('partial/left_article', {post: post, index: true}) %>
-    <% }) %>
+    <% site.posts.each(function(post, i){ %>
+    <% switch(post.type){
+    case 'right':
+    %>
+    <%- partial('partial/right_article', {post: post, index: true, no: i}) %>
+    <%
+      break;
+    case 'full':
+    %>
+    <%- partial('partial/full_article', {post: post, index: true, no: i}) %>
+    <%
+      break;
+    case 'left':
+        ;
+    default:
+    %>
+    <%- partial('partial/left_article', {post: post, index: true, no: i}) %>
+    <%
+    }
+    }) %>
   </div>
   <%- partial('partial/foot') %>
 </div>

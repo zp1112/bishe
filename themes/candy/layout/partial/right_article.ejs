@@ -6,7 +6,7 @@
     </time>
 
   </div>
-  <div class="left" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:80px;margin-top:0;">
+  <div class="right" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:50px;" data-center-top="opacity:1;margin-right:0;margin-top:0;">
     <div class="arrow_side"></div>
     <article>
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
@@ -32,10 +32,10 @@
       </section>
     </article>
   </div>
-  <div class="right">
+  <div class="left">
     <div class="arrow_side"></div>
-    <div class="figure" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;left:200px;top:200px;" data-center-top="opacity:1;left:0;top:0;">
-      <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
+    <div class="figure" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;left: -300px;top: 100px;" data-center-top="opacity:1;left:-50px;top:0;">
+      <div class="bg_img" style="background-image: url(/1.jpg)"></div>
     </div>
   </div>
 </div>
