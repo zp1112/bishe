@@ -537,7 +537,7 @@ html, body {
 }
 
 html {
-    background: url(/he.jpg) no-repeat;
+    background: url(/bg.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed
 }
@@ -565,8 +565,11 @@ a{
     height: 200px;
     border-radius: 50%;
     border: 20px solid #CDCACB;
+    position: absolute;
 }
-
+.img1{
+    transition: all .9s;
+}
 .img2 {
     opacity: 0;
     border: 20px solid #CDCACB;
@@ -578,6 +581,10 @@ a{
 .hover{
     transform:scale(0.5);
     opacity: .8;
+}
+.hide{
+    opacity: 0;
+    transform: rotateY(360deg);
 }
 
 .bottom {
@@ -708,6 +715,8 @@ a{
 .post {
     clear: both;
     padding-bottom: 300px;
+    position: relative;
+    z-index: 110;
 }
 
 .post .mid {
@@ -753,13 +762,20 @@ a{
     left: 20px;
 }
 .post .left {
-    width: 400px;
+    width: 430px;
     float: left;
     margin-left: 80px;
 }
 
 .post .right {
     float: right;
+}
+.post .article{
+    background: url(/bg1.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 40px 40px;
+
 }
 
 .figure {
@@ -817,7 +833,7 @@ a{
 .info{
     width: 1200px;
     margin: 300px auto 0;
-    background: rgba(231,227,226,.9);
+    background: rgba(218, 208, 177, 0.76);
     overflow: hidden;
     padding: 50px;
     position: relative;
@@ -857,7 +873,7 @@ a{
 .info h3{
     padding: 10px;
     width: 220px;
-    background: #E1DDDC;
+    background: #E3D1AB;
     border: 1px solid #9a8c80;
     border-radius: 10px;
     position: absolute;
@@ -878,6 +894,14 @@ a{
     border-radius: 15px;
 }
 
+.full{
+    width: 1000px;
+    margin: 0 auto;
+}
+.full .figure,.full .figure .bg_img{
+    width: 1000px;
+    height: 350px;
+}
 
 
 

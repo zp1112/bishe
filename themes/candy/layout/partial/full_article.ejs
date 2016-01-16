@@ -6,10 +6,11 @@
     </time>
 
   </div>
-  <div class="left" data-anchor-target="#post-<%= no %>"
-       data-0="opacity:0;margin-left:-120px;margin-top:50px;" data-center-top="opacity:1;margin-left:80px;margin-top:0;">
-    <div class="arrow_side"></div>
-    <article>
+  <div class="full" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:100px;margin-top:0;">
+    <div class="figure">
+      <div class="bg_img" style="background-image: url(/1.jpg)"></div>
+    </div>
+    <article class="article">
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
       <section>
         <% if (post.excerpt && index){ %>
@@ -32,11 +33,5 @@
         }) %>
       </section>
     </article>
-  </div>
-  <div class="right">
-    <div class="arrow_side"></div>
-    <div class="figure" data-anchor-target="#post-<%= no %>" data-0="opacity:0;left:160px;top:50px;" data-center-top="opacity:1;left:0;top:0;">
-      <div class="bg_img" style="background-image: url(/1.jpg)"></div>
-    </div>
   </div>
 </div>
