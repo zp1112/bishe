@@ -1,16 +1,20 @@
-<div class="bottom">
+<div class="line" data-anchor-target="#footer" data-bottom-top="margin-top:0px;"
+     data-280-bottom="margin-top:-260px;"></div>
+<div class="bottom" data-anchor-target="#footer" data-bottom-top="bottom:80px;" data-280-bottom="bottom:360px;">
   <div class="box left_box">
     <span><%- date(Date.now(), 'MMMM YYYY') %></span>
     <strong><%- date(Date.now(), 'D') %></strong>
   </div>
   <div class="box right_box">
-    <strong><%= site.posts.length%></strong><span>POSTS AT HOME PAGE</span>
+    <strong><%= site.posts.length %></strong><span>POSTS AT HOME PAGE</span>
   </div>
-  <div class="line"></div>
   <div class="l line1"></div>
   <div class="l line2"></div>
   <div class="l line3"></div>
   <div class="l line4"></div>
   <div class="circle"></div>
-  <%- paginator({show_all:true}) %>
+  <div class="paginator">
+    <%- paginator({prev_next:false}) %>
+  </div>
+
 </div>

@@ -533,19 +533,26 @@ table {
 }
 
 html, body {
-    height: 100%
+    height: 100% !important;
 }
 
 html {
     background: url(/bg.jpg) no-repeat;
     background-size: cover;
-    background-attachment: fixed
+    background-attachment: fixed;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-.post p{line-height: 14px;font-size: 10px;padding: 8px 0}
+
+.post p {
+    line-height: 14px;
+    font-size: 10px;
+    padding: 8px 0
+}
+
 .center .top {
     border: 20px solid #DDDCDA;
     width: 240px;
@@ -567,22 +574,25 @@ a{
     border: 20px solid #CDCACB;
     position: absolute;
 }
-.img1{
+
+.img1 {
     transition: all .9s;
 }
+
 .img2 {
     opacity: 0;
     border: 20px solid #CDCACB;
 }
 
 /*.center .top:hover {*/
-    /*transform: scale(0.5);*/
+/*transform: scale(0.5);*/
 /*}*/
-.hover{
-    transform:scale(0.5);
-    opacity: .8;
+.hover {
+    transform: scale(0.5);
+    opacity: .9;
 }
-.hide{
+
+.hide {
     opacity: 0;
     transform: rotateY(360deg);
 }
@@ -592,15 +602,18 @@ a{
     bottom: 80px;
     position: fixed;
     margin-left: 1px;
-    z-index: 110;
+    z-index: 120;
+    transition: all .5s;
 }
 
 .line {
     width: 1px;
-    height: 500px;
+    height: 525px;
     background: #fff;
-    position: absolute;
-    bottom: 45px;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: 1px;
 }
 
 .l {
@@ -637,7 +650,8 @@ a{
     transition: all .5s;
     cursor: pointer;
 }
-.bottom:hover .circle{
+
+.bottom:hover .circle {
     transform: scale(1.7);
 }
 
@@ -651,19 +665,22 @@ a{
     transition: all .5s;
 }
 
-.box{
+.box {
     top: -5px;
     cursor: pointer;
-    background:  rgba(163,149,140,0);
+    background: rgba(163, 149, 140, 0);
     transition: all .5s;
 }
+
 .left_box {
     left: -190px;
 }
-.left_box:hover{
-    background:  rgba(163,149,140,1);
+
+.left_box:hover {
+    background: rgba(163, 149, 140, 1);
 }
-.left_box span{
+
+.left_box span {
     float: left;
     display: block;
     width: 30px;
@@ -671,27 +688,32 @@ a{
     margin-left: 10px;
     color: #A3958C;
 }
-.left_box strong{
+
+.left_box strong {
     float: right;
     font-size: 34px;
     color: #A3958C;
     margin-right: 5px;
     margin-top: 6px;
 }
-.left_box:hover strong,.left_box:hover span{
+
+.left_box:hover strong, .left_box:hover span {
     color: #fff;
 }
+
 .right_box {
     left: 50px;
 }
-.right_box strong{
+
+.right_box strong {
     float: left;
     font-size: 34px;
     color: #A3958C;
     margin-left: 15px;
     margin-top: 6px;
 }
-.right_box span{
+
+.right_box span {
     float: left;
     display: block;
     width: 70px;
@@ -700,12 +722,15 @@ a{
     color: #A3958C;
     font-size: 12px;
 }
-.right_box:hover strong,.right_box:hover span{
+
+.right_box:hover strong, .right_box:hover span {
     color: #fff;
 }
-.right_box:hover{
-    background:  rgba(163,149,140,1);
+
+.right_box:hover {
+    background: rgba(163, 149, 140, 1);
 }
+
 .timeline {
     width: 88%;
     max-width: 1200px;
@@ -748,7 +773,8 @@ a{
     top: 80px;
     background: #fff;
 }
-.post time .time_dot:before,.post time .time_dot:after{
+
+.post time .time_dot:before, .post time .time_dot:after {
     content: '';
     width: 30px;
     height: 1px;
@@ -758,9 +784,11 @@ a{
     left: -35px;
     top: 6px;
 }
-.post time .time_dot:before{
+
+.post time .time_dot:before {
     left: 20px;
 }
+
 .post .left {
     width: 430px;
     float: left;
@@ -770,7 +798,8 @@ a{
 .post .right {
     float: right;
 }
-.post .article{
+
+.post .article {
     background: url(/bg1.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -791,9 +820,10 @@ a{
     /* overflow: hidden; */
     background-size: cover;
     background-position: center center;
-    transition:all 1s;
+    transition: all 1s;
 }
-.figure:before,.figure:after{
+
+.figure:before, .figure:after {
     content: '';
     width: 1px;
     height: 90px;
@@ -806,31 +836,44 @@ a{
     opacity: 0;
     z-index: 110;
 }
-.figure:before{
+
+.figure:before {
     transform: rotate(90deg);
 }
-.bg_img:before{
+
+.bg_img:before {
     content: '';
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     transition: all 1s;
     z-index: 100;
 }
-.figure:hover .bg_img{
+
+.figure:hover .bg_img {
     transform: scale(1.2);
 }
-.figure:hover .bg_img:before{
-    background: rgba(0,0,0,.6);
+
+.figure:hover .bg_img:before {
+    background: rgba(0, 0, 0, .6);
 }
+
 .figure:hover:before,
-.figure:hover:after{opacity: 1;}
+.figure:hover:after {
+    opacity: 1;
+}
 
-.article-more-link{color: #9a8c80;}
-.meta,.meta a{font-size: 14px;color:#9a8c80; }
+.article-more-link {
+    color: #9a8c80;
+}
 
-.info{
+.meta, .meta a {
+    font-size: 14px;
+    color: #9a8c80;
+}
+
+.info {
     width: 1200px;
     margin: 300px auto 0;
     background: rgba(218, 208, 177, 0.76);
@@ -839,38 +882,45 @@ a{
     position: relative;
     z-index: 118;
 }
-.info .figure{
+
+.info .figure {
     width: 300px;
     height: 400px;
     float: left;
 }
-.info .bg_img{
+
+.info .bg_img {
     width: 300px;
     height: 400px;
 }
-.passage{
-    width: 370px;
+
+.passage {
+    width: 340px;
     float: left;
     margin: 0 60px;
 }
-.passage p{
+
+.passage p {
     line-height: 30px;
     font-size: 14px;
     color: #9a8c80;
 }
 
-.info h1,.info h3,.passage h2,.info_more h2{
+.info h1, .info h3, .passage h2, .info_more h2 {
     color: #9a8c80;
 }
-.info .head{
+
+.info .head {
     text-align: center;
 }
-.info h1{
+
+.info h1 {
     border-bottom: 1px solid #9a8c80;
     padding-bottom: 50px;
     display: block;
 }
-.info h3{
+
+.info h3 {
     padding: 10px;
     width: 220px;
     background: #E3D1AB;
@@ -881,29 +931,43 @@ a{
     margin-left: -108px;
     margin-top: -40px;
 }
-.info_more{
-    width: 300px;
+
+.info_more {
+    width: 330px;
     float: right;
 }
-.info_more p{
+
+.info_more p {
     border: 1px solid #9a8c80;
     display: inline-block;
-    width: 300px;
+    width: 330px;
     margin-bottom: 5px;
     padding: 22px;
     border-radius: 15px;
 }
 
-.full{
-    width: 1000px;
+.full {
+    width: 1100px;
     margin: 0 auto;
 }
-.full .figure,.full .figure .bg_img{
-    width: 1000px;
+
+.full .figure, .full .figure .bg_img {
+    width: 1100px;
     height: 350px;
 }
 
+.footer {
+    width: 100%;
+    background: #3E3E3E;
+    text-align: center;
+    padding: 100px;
+}
+.paginator{
+    text-align: center;
+}
+.page-number{
 
+}
 
 
 
