@@ -1,17 +1,21 @@
 <div class="post" id="post-<%= no %>">
-  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center-bottom="opacity:1;" data-top="opacity:0;">
+  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center="opacity:1;">
     <time class="time_dot_date" datetime="<%= date(post.date) %>">
       <%= date(post.date) %>
       <div class="time_dot"></div>
+      <div class="geolocation">
+        我在这里
+      </div>
     </time>
 
   </div>
-  <div class="full" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:80px;margin-top:0;">
+  <div class="full" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:51px;margin-top:0;">
     <div class="figure">
       <div class="bg_img" style="background-image: url(/1.jpg)"></div>
     </div>
     <article class="article">
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <span class="post_date" datetime="<%= full_date(post.date)%>"></span>
       <section>
         <% if (post.excerpt && index){ %>
         <%- post.excerpt %>

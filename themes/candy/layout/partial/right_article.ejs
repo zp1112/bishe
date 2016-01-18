@@ -1,15 +1,17 @@
 <div class="post" id="post-<%= no %>">
-  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center-bottom="opacity:1;" data-top="opacity:0;">
+  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center="opacity:1;">
     <time class="time_dot_date" datetime="<%= date(post.date) %>">
       <%= date(post.date) %>
-      <div class="time_dot"></div>
+      <div class="time_dot" date-place="<%= post.city%>"></div>
+      <span class="geolocation"></span>
     </time>
 
   </div>
-  <div class="right article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:50px;" data-center-top="opacity:1;margin-right:20px;margin-top:0;">
+  <div class="right article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:50px;" data-center-top="opacity:1;margin-right:30px;margin-top:0;">
     <div class="arrow_side"></div>
     <article>
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <span class="post_date" datetime="<%= full_date(post.date)%>"></span>
       <section>
         <% if (post.excerpt && index){ %>
         <%- post.excerpt %>

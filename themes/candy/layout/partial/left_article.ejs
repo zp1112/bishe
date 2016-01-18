@@ -1,14 +1,19 @@
 <div class="post" id="post-<%= no %>">
-  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center-bottom="opacity:1;" data-top="opacity:0;">
+  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center="opacity:1;">
     <time class="time_dot_date" datetime="<%= date(post.date) %>">
       <%= date(post.date) %>
-      <div class="time_dot"></div>
-    </time>
+      <div class="time_dot" date-place="<%= post.city%>"></div>
+      <span class="geolocation"></span>
 
+    </time>
   </div>
-  <div class="left article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:80px;margin-top:0;">
+
+  <div class="left article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:45px;margin-top:0;">
     <article>
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <span class="post_date" datetime="<%= full_date(post.date)%>">
+
+      </span>
       <section>
         <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -32,7 +37,7 @@
     </article>
   </div>
   <div class="right">
-    <div class="figure" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;left:200px;top:200px;" data-center-top="opacity:1;left:-80px;top:0;">
+    <div class="figure" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;left:200px;top:200px;" data-center-top="opacity:1;left:-35px;top:0;">
       <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
     </div>
   </div>
