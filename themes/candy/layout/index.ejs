@@ -1,35 +1,28 @@
-<%- partial('partial/head') %>
-<body>
-<div class="bg">
-  <%- partial('partial/center') %>
-  <%- partial('partial/info') %>
-  <div class="timeline">
-    <% page.posts.each(function(post, i){ %>
-    <% switch(post.type){
-    case 'right':
-    %>
-    <%- partial('partial/right_article', {post: post, index: true, no: i}) %>
-    <%
-      break;
-    case 'full':
-    %>
-    <%- partial('partial/full_article', {post: post, index: true, no: i}) %>
-    <%
-      break;
+<%- partial('partial/center') %>
+<%- partial('partial/info') %>
+<div class="timeline">
+  <% page.posts.each(function(post, i){ %>
+  <% switch(post.type){
+  case 'right':
+  %>
+  <%- partial('partial/right_article', {post: post, index: true, no: i}) %>
+  <%
+    break;
+  case 'full':
+  %>
+  <%- partial('partial/full_article', {post: post, index: true, no: i}) %>
+  <%
+    break;
     case 'left':
-        ;
-    default:
-    %>
-    <%- partial('partial/left_article', {post: post, index: true, no: i}) %>
-    <%
-    }
-    }) %>
+      ;
+  default:
+  %>
+  <%- partial('partial/left_article', {post: post, index: true, no: i}) %>
+  <%
+  }
+  }) %>
 
-  </div>
-  <div class="paginator">
-    <%- paginator({prev_next:false}) %>
-  </div>
-  <%- partial('partial/foot') %>
 </div>
-</body>
-</html>
+<div class="paginator">
+  <%- paginator({prev_next:false}) %>
+</div>

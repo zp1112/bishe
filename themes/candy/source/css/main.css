@@ -40,12 +40,17 @@ a {
     position: fixed;
 }
 
-.top img {
+.top a {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 20px solid #CDCACB;
     position: absolute;
+}
+.top a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .img1 {
@@ -384,16 +389,16 @@ a {
 }
 
 .info {
-    width: 88%;
+    width: 75%;
     max-width: 1200px;
     margin: 300px auto 0;
     background: rgba(218, 208, 177, 0.76);
     overflow: hidden;
-    padding: 50px;
+    padding: 30px;
 }
 
 .info .figure {
-    width: 300px;
+    width: 30%;
     height: 400px;
     float: left;
 }
@@ -404,9 +409,9 @@ a {
 }
 
 .passage {
-    width: 340px;
+    width: 30%;
     float: left;
-    margin: 0 60px;
+    margin: 0 15px;
 }
 
 .passage p {
@@ -442,7 +447,7 @@ a {
 }
 
 .info_more {
-    width: 330px;
+    width: 36%;
     float: right;
 }
 
@@ -500,6 +505,96 @@ a {
 }
 .current{
     background: #2b81af;
+}
+
+/*sidebar*/
+.sidebar{
+    position: fixed;
+    top:280px;
+    right: 40px;
+    z-index: 9999;
+}
+.sidebar .home{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #9a8c80;
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    margin-left: -15px;
+    text-align: center;
+    line-height: 30px;
+}
+.home:before{
+    content: '';
+    width: 1px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    background: #3f3f3f;
+}
+.widget{
+    position: relative;
+}
+
+.widget h5{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0d3349;
+    margin-left: 43px;
+    margin-top: 0;
+}
+.widget:before{
+    content: '';
+    width: 1px;
+    height: 130px;
+    position: absolute;
+    left: 46px;
+    top: 8px;
+    background: #3f3f3f;
+}
+.widget h5 span{
+    width: 60px;
+    height: 18px;
+    background: #3f3f3f;
+    border-radius: 8px;
+    position: relative;
+    display: inline-block;
+    left: -80px;
+    top: -2px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.1;
+    transition: all .3s;
+}
+.widget:hover span,.widget:hover .tags{
+    opacity: 1;
+}
+.wrap{
+
+}
+.tags{
+opacity: 0;
+    transition: all .3s;
+    background: #9a8c80;
+    z-index: 1000;
+    position: relative;
+}
+.tags ul{
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+
+}
+.tags li{
+    padding: 5px;
+    color: #fff;
+    margin: 5px;
 }
 
 

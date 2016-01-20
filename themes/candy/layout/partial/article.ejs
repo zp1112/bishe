@@ -1,0 +1,34 @@
+<div class="post fullpage" id="full_post">
+    <div class="time_dot_date">
+        <%= date(post.date) %>
+    </div>
+    <div class="full">
+        <div class="figure">
+            <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
+        </div>
+        <article class="article">
+            <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+            <span class="post_date" datetime="<%= full_date(post.date)%>"></span>
+            <section>
+                <% if (post.excerpt && index){ %>
+                <%- post.excerpt %>
+
+                <a class="article-more-link" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+
+                <% } else { %>
+                <%- post.content %>
+                <% } %>
+            </section>
+            <section class="meta">
+                城市: <%- list_categories(post.categories, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+                , 标签: <%- list_tags(post.tags, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+            </section>
+        </article>
+    </div>
+</div>

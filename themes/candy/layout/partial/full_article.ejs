@@ -8,7 +8,7 @@
   </div>
   <div class="full" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:0;margin-top:0;">
     <div class="figure">
-      <div class="bg_img" style="background-image: url(/1.jpg)"></div>
+      <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
     </div>
     <article class="article">
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>

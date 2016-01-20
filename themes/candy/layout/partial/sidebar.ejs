@@ -1,0 +1,23 @@
+<div class="sidebar">
+    <% if (site.categories.length){ %>
+    <a class="home" href="<%- url_for() %>">Z</a>
+    <div class="widget">
+        <h5><span>Cities</span></h5>
+        <div class="tags" id="category">
+            <%- list_categories({show_count: 1}) %>
+        </div>
+    </div>
+    <% } %>
+    <% if (site.tags.length){ %>
+    <div class="widget">
+        <h5><span>Tags</span></h5>
+        <div class="tags" id="tag">
+            <%- list_tags({show_count: 1}) %>
+        </div>
+    </div>
+    <% } %>
+</div>
+
+
+
+
