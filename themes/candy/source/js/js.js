@@ -1,21 +1,24 @@
 window.onload = function () {
 
+//滚动视差
     var s = skrollr.init();
 
+//头像变换
     window.onscroll = function () {
         var top = document.getElementsByClassName('top')[0];
         var img1 = document.getElementsByClassName('img1')[0];
         if (window.scrollY > 0) {
-            top.className = 'top hover';
+            top.className = 'top scroll';
             img1.className = 'img1 hide';
         }
         else {
             top.className = 'top';
-            img1.className = 'img1'
+            img1.className = 'img1';
         }
     };
 
-
+//countdown日期计数
+    //返回时间差
     var cd = function (input) {
         //format: y d h m s
         var dvalue = parseInt(new Date(input) - new Date(), 10) / 1000;
@@ -30,10 +33,11 @@ window.onload = function () {
         result.totalDays = parseInt(dvalue / 86400, 10);
         result.years = parseInt(result.totalDays / 365, 10);
         result.days = parseInt(result.totalDays % 365, 10);
+        result.month=parseInt(result.totalDays/30,10);
 
         return result;
     };
-
+    //年龄计算
     var timer = function () {
         var age = document.getElementsByClassName('info_age')[0];
 
@@ -43,39 +47,44 @@ window.onload = function () {
         setTimeout(timer, 999);
     };
     timer();
-
+    //发布时间
     var post_date = document.getElementsByClassName('post_date');
     for (var i = 0; i < post_date.length; i++) {
         var result = cd(post_date[i].getAttribute('datetime'));
-        post_date[i].innerHTML = (result.years > 0 ? result.years + '年' : '') + result.days + '天前发布';
+        post_date[i].innerHTML = (result.years > 0 ? result.years + '年前发布' : (result.month>0?result.month+'个月前发布':result.days + '天前发布'));
     }
 
-
+//百度地图
     var time_dot_date = document.getElementsByClassName('time_dot_date');
     var time_dot = document.getElementsByClassName('time_dot');
     var geolocation = document.getElementsByClassName('geolocation');
-    var html = document.createElement('div');
-    html.id = 'map';
-    for (var i = 0; i < time_dot.length; i++) {
+    var html=document.createElement('div');
+    html.id='map';
+    var close=document.createElement('span');//关闭按钮
+    close.id='close';
+    close.innerHTML="+";
+
+
+    for (var i = 0; i < time_dot_date.length; i++) {
         (function (ele, ala) {
             var mouseoverfunc = function () {
-
                 ele.appendChild(html);
+                ele.appendChild(close);
+                ala.style.display ='inline-block';
+                ala.innerHTML='';
                 ele.onmouseover = null;
 
-                //map
                 var map = new BMap.Map("map");  // 创建Map实例
                 var place = ele.getAttribute('date-place');
                 map.centerAndZoom(place, 12);
-                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-                /* Geolocation */
+                //计算距离
                 var EARTH_RADIUS = 6378137.0;    //单位M
                 var PI = Math.PI;
 
                 function getRad(d) {
                     return d * PI / 180.0;
                 }
-
+                //计算距离
                 function getDistance(lat1, lng1, lat2, lng2) {
                     var f = getRad((lat1 + lat2) / 2);
                     var g = getRad((lat1 - lat2) / 2);
@@ -98,7 +107,7 @@ window.onload = function () {
                     h2 = (3 * r + 1) / 2 / s;
                     return d * (1 + fl * (h1 * sf * (1 - sg) - h2 * (1 - sf) * sg));
                 }
-
+                //错误回调
                 function handleLocationError(error) {
                     switch (error.code) {
                         case 0:
@@ -116,19 +125,20 @@ window.onload = function () {
                     }
                     //To Do Sth;
                 }
-
+                //成功回调
                 function getPositionSuccess(position) {
                     var lat_c = parseFloat(position.latitude);
                     var lng_c = parseFloat(position.longitude);
                     var lat = map.getCenter().lat;
                     var lng = map.getCenter().lng;
                     var dist = getDistance(lat_c, lng_c, lat, lng);
-                    dist = (dist < 1000) ? (dist.toFixed(2) + 'M') : ((dist / 1000).toFixed(2) + 'KM');
+                    dist = (dist < 1000) ? (dist.toFixed(2)* + 'M') : ((dist / 1000).toFixed(2) + 'KM');
                     ala.innerHTML = '与你相距:'+dist;
                 }
-
+//监听地图加载事件
+                //回调事件
                 var tilesLoad = function () {
-                    map.removeEventListener('tilesloaded', tilesLoad);
+                    map.removeEventListener('tilesloaded', tilesLoad);//移除监听
                     var geolocation = new BMap.Geolocation();
                     geolocation.getCurrentPosition(getPositionSuccess, handleLocationError, {
                         enableHighAccuracy: true,
@@ -136,18 +146,22 @@ window.onload = function () {
                         timeout: 30000
                     });
                 };
+                //监听
                 map.addEventListener("tilesloaded", tilesLoad);
-                document.getElementById('map').onmouseout = function () {
+                //关闭地图
+                document.getElementById('close').onclick = function () {
+                    ala.style.display ='none';
                     ele.removeChild(html);
+                    ele.removeChild(close);
                     ele.onmouseover = mouseoverfunc;
-                    ala.innerHTML = '';
                 };
             };
             ele.onmouseover = mouseoverfunc;
-        })(time_dot[i], geolocation[i]);
+        })(time_dot_date[i], geolocation[i]);
     }
 
 
 };
+
 
 

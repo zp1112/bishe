@@ -1,13 +1,11 @@
 <div class="post" id="post-<%= no %>">
-  <div class="mid" data-anchor-target="#post-<%= no %>" data-center-top="opacity:0;" data-center="opacity:1;">
-    <time class="time_dot_date" datetime="<%= date(post.date) %>">
+  <div class="time_dot_date" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;" data-center-top="opacity:1;" date-place="<%= post.city%>" datetime="<%= date(post.date) %>">
       <%= date(post.date) %>
-      <div class="time_dot" date-place="<%= post.city%>"></div>
+      <div class="time_dot"></div>
       <span class="geolocation"></span>
-    </time>
 
   </div>
-  <div class="right article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:50px;" data-center-top="opacity:1;margin-right:30px;margin-top:0;">
+  <div class="right article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:200px;" data-center-top="opacity:1;margin-right:0px;margin-top:0;">
     <div class="arrow_side"></div>
     <article>
       <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
@@ -34,9 +32,9 @@
       </section>
     </article>
   </div>
-  <div class="left">
+  <div class="left" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:0;margin-top:0;">
     <div class="arrow_side"></div>
-    <div class="figure" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;left: -300px;top: 100px;" data-center-top="opacity:1;left:0px;top:0;">
+    <div class="figure">
       <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
     </div>
   </div>

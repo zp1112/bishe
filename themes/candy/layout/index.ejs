@@ -4,7 +4,7 @@
   <%- partial('partial/center') %>
   <%- partial('partial/info') %>
   <div class="timeline">
-    <% site.posts.each(function(post, i){ %>
+    <% page.posts.each(function(post, i){ %>
     <% switch(post.type){
     case 'right':
     %>
@@ -24,6 +24,10 @@
     <%
     }
     }) %>
+
+  </div>
+  <div class="paginator">
+    <%- paginator({prev_next:false}) %>
   </div>
   <%- partial('partial/foot') %>
 </div>
