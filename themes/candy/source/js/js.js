@@ -4,33 +4,29 @@ window.onload = function () {
     var s = skrollr.init();
 
 //头像变换
-    window.onscroll = function () {
-        var top = document.getElementsByClassName('top')[0];
-        var img1 = document.getElementsByClassName('img1')[0];
-        if (top !== undefined) {
-            if (window.scrollY > 0) {
-                top.className = 'top scroll';
-                img1.className = 'img1 hide';
+    var top = document.getElementsByClassName('top')[0];
+    var img1 = document.getElementsByClassName('img1')[0];
+    if(top.id=='top'){
+        top.className = 'top scroll';
+        img1.className = 'img1 hide';
+    }
+    else{
+        window.onscroll = function () {
+
+            if (top !== undefined) {
+                if (window.scrollY > 0) {
+                    top.className = 'top scroll';
+                    img1.className = 'img1 hide';
+                }
+                else {
+                    top.className = 'top';
+                    img1.className = 'img1';
+                }
             }
-            else {
-                top.className = 'top';
-                img1.className = 'img1';
-            }
-        }
-    };
-//标签
-//var tag=document.getElementById('tag');
-//    var category=document.getElementById('category');
-//    var widget=document.getElementsByClassName('widget');
-//    widget[0].onclick= function () {
-//        tag.style.display='none';
-//      category.style.display='block';
-//
-//    };
-//    widget[1].onclick=function(){
-//        category.style.display='none';
-//        tag.style.display='block';
-//    };
+        };
+    }
+
+
 
 //countdown日期计数
     //返回时间差

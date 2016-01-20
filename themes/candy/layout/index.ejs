@@ -1,4 +1,4 @@
-<%- partial('partial/center') %>
+<%- partial('partial/center',{id:''}) %>
 <%- partial('partial/info') %>
 <div class="timeline">
   <% page.posts.each(function(post, i){ %>
@@ -23,6 +23,7 @@
   }) %>
 
 </div>
-<div class="paginator">
+<div class="paginator"  data-anchor-target="#footer" data-300-bottom="bottom:77px"
+     data-bottom-top="bottom:312px;">
   <%- paginator({prev_next:false}) %>
 </div>

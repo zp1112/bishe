@@ -1,0 +1,8 @@
+<%- partial('partial/center',{id:'top'}) %>
+<div class="timeline">
+    <% page.posts.each(function(post, i){ %>
+        <%- partial('partial/category', {post: post, index: true,no:i}) %>
+    <%
+    }) %>
+
+</div>

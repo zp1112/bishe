@@ -1,8 +1,9 @@
-<div class="sidebar">
+<div class="sidebar" data-anchor-target="#footer" data-300-bottom="bottom:180px;"
+     data-bottom-top="bottom:280px;">
     <% if (site.categories.length){ %>
     <a class="home" href="<%- url_for() %>">Z</a>
     <div class="widget">
-        <h5><span>Cities</span></h5>
+        <h5><a href="#">Cities</a></h5>
         <div class="tags" id="category">
             <%- list_categories({show_count: 1}) %>
         </div>
@@ -10,12 +11,15 @@
     <% } %>
     <% if (site.tags.length){ %>
     <div class="widget">
-        <h5><span>Tags</span></h5>
+        <h5><a href="#">Tags</a></h5>
         <div class="tags" id="tag">
             <%- list_tags({show_count: 1}) %>
         </div>
     </div>
     <% } %>
+    <div class="widget">
+        <h5><a href="<%- url_for('/archives') %>">Archives</a></h5>
+    </div>
 </div>
 
 

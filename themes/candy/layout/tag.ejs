@@ -1,0 +1,7 @@
+<%- partial('partial/center',{id:'top'}) %>
+<div class="timeline">
+    <% page.posts.each(function(post, i){ %>
+    <%- partial('partial/tag', {post: post, index: true,no:i}) %>
+    <%
+    }) %>
+</div>

@@ -1,0 +1,44 @@
+
+<div class="post" id="post-<%= no %>">
+    <div class="time_dot_date" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;" data-center-top="opacity:1;" date-place="<%= post.city%>" datetime="<%= date(post.date) %>">
+        <%= date(post.date) %>
+        <div class="time_dot"></div>
+        <span class="geolocation"></span>
+
+
+    </div>
+
+    <div class="left article" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-left:-200px;margin-top:200px;" data-center-top="opacity:1;margin-left:0px;margin-top:0;">
+        <article>
+            <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <span class="post_date" datetime="<%= full_date(post.date)%>">
+
+      </span>
+            <section>
+                <% if (post.excerpt && index){ %>
+                <%- post.excerpt %>
+
+                <a class="article-more-link" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+
+                <% } else { %>
+                <%- post.content %>
+                <% } %>
+            </section>
+            <section class="meta">
+                城市: <%- list_categories(post.categories, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+                , 标签: <%- list_tags(post.tags, {
+                    show_count: false,
+                    style: 'none'
+                }) %>
+            </section>
+        </article>
+    </div>
+    <div class="right" data-anchor-target="#post-<%= no %>" data-bottom-top="opacity:0;margin-right:-200px;margin-top:200px;" data-center-top="opacity:1;margin-right:0;margin-top:0;">
+        <div class="figure">
+            <div class="bg_img" style="background-image: url('<%= post.banner || '/1.jpg' %>')"></div>
+        </div>
+    </div>
+</div>

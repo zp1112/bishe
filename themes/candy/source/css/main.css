@@ -200,10 +200,13 @@ a {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+.timeline:before{
+    content: '';
+    display: table;
+}
 .post {
     clear: both;
-    padding-bottom: 200px;
+    padding-bottom: 300px;
     position: relative;
     z-index: 110;
     width: 85%;
@@ -485,10 +488,10 @@ a {
 
 .paginator {
     text-align: center;
-    position: relative;
-    bottom: 70px;
+    position: fixed;
     z-index: 130;
-    left: 100px;
+    left: 80px;
+    bottom: 77px;
 }
 
 .page-number {
@@ -498,6 +501,8 @@ a {
     background: #9a8c80;
     line-height: 25px;
     float: left;
+    margin: 10px;
+
 }
 .page-number:hover{
     background: #2b81af;
@@ -510,7 +515,7 @@ a {
 /*sidebar*/
 .sidebar{
     position: fixed;
-    top:280px;
+    bottom:180px;
     right: 40px;
     z-index: 9999;
 }
@@ -546,6 +551,7 @@ a {
     background: #0d3349;
     margin-left: 43px;
     margin-top: 0;
+    transition: all .3s;
 }
 .widget:before{
     content: '';
@@ -556,7 +562,7 @@ a {
     top: 8px;
     background: #3f3f3f;
 }
-.widget h5 span{
+.widget h5 a{
     width: 60px;
     height: 18px;
     background: #3f3f3f;
@@ -572,8 +578,11 @@ a {
     opacity: 0.1;
     transition: all .3s;
 }
-.widget:hover span,.widget:hover .tags{
+.widget:hover a,.widget:hover .tags{
     opacity: 1;
+}
+.widget:hover h5{
+    transform: scale(1.3);
 }
 .wrap{
 
@@ -597,8 +606,41 @@ opacity: 0;
     margin: 5px;
 }
 
-
-
+.archive{
+    width: 50%;
+    margin: 100px 5%;
+    position: relative;
+}
+.archive:before{
+    content: '';
+    width: 1px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    z-index: -1;
+}
+.archive .post_time_date{
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid #9a8c80;
+    border-radius: 10px;
+}
+.archive h2{
+    position: relative;
+    left: 140px;
+    top: -51px;
+    text-align: left;
+}
+.archive h2:hover a{
+    color: #1d7fee;
+    font-weight: bolder;
+}
 
 
 
