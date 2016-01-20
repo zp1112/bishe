@@ -3,6 +3,6 @@
     <a href="<%- url_for() %>"><img class="img1" src="/avatar3.jpg" alt="<%= config.title %>"></a>
 </div>
 <%- partial('partial/info') %>
-<% page.posts.each(function(post){ %>
+<% site.posts.each(function(post){ %>
 <%- partial('partial/archive', {post: post, index: true}) %>
 <% }) %>

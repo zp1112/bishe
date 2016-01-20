@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f121585e-ca6e-499c-9f2d-434141fef863" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/candy/layout/archive.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/archive.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/tag.ejs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/themes/candy/layout/arcrive.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/category.ejs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/themes/landscape/layout/archive.ejs" afterPath="$PROJECT_DIR$/themes/landscape/layout/archives.ejs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/themes/landscape/layout/category.ejs" afterPath="$PROJECT_DIR$/themes/landscape/layout/categories.ejs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/themes/landscape/layout/tag.ejs" afterPath="$PROJECT_DIR$/themes/landscape/layout/tags.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/2016-01-12-beijing.md" afterPath="$PROJECT_DIR$/source/_posts/2016-01-12-beijing.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/2016-01-19-fourth.md" afterPath="$PROJECT_DIR$/source/_posts/2016-01-19-fourth.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/category.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/category.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/index.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/index.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/layout.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/layout.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/partial/bottom.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/bottom.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/partial/center.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/center.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/partial/sidebar.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/sidebar.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/tag.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/tag.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/source/css/main.css" afterPath="$PROJECT_DIR$/themes/candy/source/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/source/js/js.js" afterPath="$PROJECT_DIR$/themes/candy/source/js/js.js" />
-    </list>
+    <list default="true" id="f121585e-ca6e-499c-9f2d-434141fef863" name="Default" comment="" />
     <ignored path="myblog.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,8 +84,8 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/candy/layout/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6492986">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6993988">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -576,7 +555,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19479553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -584,7 +563,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.4947146" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20200573" sideWeight="0.4947146" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20200573" sideWeight="0.4947146" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1031,8 +1010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/candy/layout/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6492986">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6993988">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding />
         </state>
       </provider>
