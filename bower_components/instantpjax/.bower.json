@@ -1,0 +1,15 @@
+{
+  "name": "instantpjax",
+  "homepage": "https://github.com/willin/instantpjax",
+  "version": "1.0.4",
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.4",
+    "commit": "5291dc7d7ff2d61b1f4975f3d6a4a5309fff984f"
+  },
+  "_source": "git://github.com/willin/instantpjax.git",
+  "_target": "~1.0.4",
+  "_originalSource": "instantpjax",
+  "_direct": true
+}
