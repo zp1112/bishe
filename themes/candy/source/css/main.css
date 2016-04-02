@@ -217,9 +217,6 @@ a {
 .post .time_dot_date {
     width: 120px;
     margin: 0 auto;
-}
-
-.post .time_dot_date {
     height: 30px;
     border: 2px solid #A2938A;
     border-radius: 20px;

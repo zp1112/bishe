@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../../../../d3.v3.min.js"></script>
+<script type="text/javascript">
+    d3.csv("data.csv", type,function (data) {
+        var width=500,
+                height=500;
+        var svg=d3.select("#container")
+                .append("svg")
+                .attr("width",width)
+                .attr("height",height);
+        var g=d3.select("svg")
+                .append("g")
+                .attr("transform","translate(200,200)");
+
+        var arc_generator=d3.svg.arc()
+                .innerRadius(100)//内径
+                .outerRadius(200);//外径
+        var angle_data=d3.layout.pie()
+                .value(function (d) {
+                    return d.population;
+                });
+        var color=d3.scale.category10();
+        g.selectAll("path")
+                .data(angle_data(data))
+                .enter()
+//        console.log(angle_data(data))
+                .append("path")
+                .attr("d",arc_generator)
+                .style("fill", function (d,i) {
+                    return color(i);
+                });
+        g.selectAll("text")
+                .data(angle_data(data))//{data:{population:111,year:1990},startAngle:111,endAngle:22}
+                .enter()
+                //        console.log(angle_data(data))
+                .append("text")
+                .text(function (d) {
+                    return d.data.year;
+                })
+                .attr("transform", function (d) {
+                    return "translate("+arc_generator.centroid(d)+")";
+                })
+                .attr("text-anchor","middle");
+
+    });
+    function type(d){
+        d.population=+d.population;//把字符串转换成数值形式
+        d.year=+d.year;
+        return d;
+    }
+</script>
+
+</body>
+</html>
