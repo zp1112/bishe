@@ -512,7 +512,7 @@ a {
 /*sidebar*/
 .sidebar{
     position: fixed;
-    bottom:180px;
+    bottom:340px;
     right: 40px;
     z-index: 9999;
 }
@@ -524,19 +524,19 @@ a {
     position: absolute;
     left: 50%;
     top: -50px;
-    margin-left: -15px;
+    margin-left: -18px;
     text-align: center;
     line-height: 30px;
 }
-.home:before{
-    content: '';
-    width: 1px;
-    height: 20px;
-    position: absolute;
-    left: 15px;
-    top: 30px;
-    background: #3f3f3f;
-}
+/*.home:before{*/
+    /*content: '';*/
+    /*width: 1px;*/
+    /*height: 20px;*/
+    /*position: absolute;*/
+    /*left: 15px;*/
+    /*top: 30px;*/
+    /*background: #3f3f3f;*/
+/*}*/
 .widget{
     position: relative;
 }
