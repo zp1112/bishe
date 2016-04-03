@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f121585e-ca6e-499c-9f2d-434141fef863" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/layout/partial/sidebar.ejs" afterPath="$PROJECT_DIR$/themes/candy/layout/partial/sidebar.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/candy/source/css/main.css" afterPath="$PROJECT_DIR$/themes/candy/source/css/main.css" />
     </list>
     <ignored path="myblog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -442,12 +440,12 @@
       <workItem from="1459242185103" duration="6707000" />
       <workItem from="1459605687687" duration="3461000" />
       <workItem from="1459676024212" duration="598000" />
-      <workItem from="1459701392358" duration="403000" />
+      <workItem from="1459701392358" duration="527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16497000" />
+    <option name="totallyTimeSpent" value="16621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />

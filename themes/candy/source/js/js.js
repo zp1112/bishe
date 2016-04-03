@@ -27,7 +27,7 @@ window.onload = function () {
     }
 
 $('.right_box').click(function () {
-    location.href='/archives';
+    location.href='http://bishe.suzper.com/archives';
 })
 
 //countdown日期计数
