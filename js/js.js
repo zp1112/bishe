@@ -84,10 +84,12 @@ window.onload = function () {
                 ala.style.display = 'inline-block';
                 ala.innerHTML = '';
                 ele.onmouseover = null;
-
                 var map = new BMap.Map("map");  // 创建Map实例
                 var place = ele.getAttribute('date-place');
                 map.centerAndZoom(place, 12);
+
+
+
                 //计算距离
                 var EARTH_RADIUS = 6378137.0;    //单位M
                 var PI = Math.PI;
@@ -177,6 +179,3 @@ window.onload = function () {
 
 
 };
-
-
-
