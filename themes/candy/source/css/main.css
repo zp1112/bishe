@@ -516,7 +516,7 @@ a {
 .sidebar{
     position: fixed;
     bottom:180px;
-    right: 40px;
+    right: -10px;
     z-index: 9999;
 }
 .sidebar .home{
@@ -641,14 +641,3 @@ opacity: 0;
     color: #1d7fee;
     font-weight: bolder;
 }
-
-
-
-
-
-
-
-
-
-
-

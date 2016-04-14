@@ -179,7 +179,3 @@ window.onload = function () {
 
 
 };
-
-
-
-

@@ -1,3 +1,8 @@
 favicon: /favicon.jpg
 excerpt_link: ...read more>>
 birthday: 1992/11/12 00:00:00
+duoshuo:
+  on: true
+  domain: http://suzper.duoshuo.com
+  # 是否开启多说评论，http://duoshuo.com/create-site/
+  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名
