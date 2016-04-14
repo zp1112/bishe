@@ -1,5 +1,8 @@
 window.onload = function() {
-  //滚动视差
+  $('.right_box').click(function() {
+      location.href = 'http://bishe.suzper.com/archives/';
+    })
+    //滚动视差
   var s = skrollr.init();
 
   //头像变换
