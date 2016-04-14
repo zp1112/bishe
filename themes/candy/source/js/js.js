@@ -26,7 +26,9 @@ window.onload = function () {
         };
     }
 
-
+$('.right_box').click(function () {
+    location.href='http://bishe.suzper.com/archives/';
+})
 
 //countdown日期计数
     //返回时间差
@@ -67,7 +69,6 @@ window.onload = function () {
 
 //百度地图
     var time_dot_date = document.getElementsByClassName('time_dot_date');
-    var time_dot = document.getElementsByClassName('time_dot');
     var geolocation = document.getElementsByClassName('geolocation');
     var html = document.createElement('div');
     html.id = 'map';
