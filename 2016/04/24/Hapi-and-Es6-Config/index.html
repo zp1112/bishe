@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hapi and Es6 Config | where and when</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hapi 项目初始化。
+npm init自动创建一个项目，生成package.json文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hapi and Es6 Config">
+<meta property="og:url" content="http://bishe.suzper.com/2016/04/24/Hapi-and-Es6-Config/index.html">
+<meta property="og:site_name" content="where and when">
+<meta property="og:description" content="Hapi 项目初始化。
+npm init自动创建一个项目，生成package.json文件。">
+<meta property="og:updated_time" content="2016-04-24T16:02:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hapi and Es6 Config">
+<meta name="twitter:description" content="Hapi 项目初始化。
+npm init自动创建一个项目，生成package.json文件。">
+  
+  
+  <link rel="icon" href="/favicon.jpg">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/instantpjax.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
+  <script src="/js/js.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ycrNGzdrd6D7s95M05rFVZqc"></script>
+  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-OzzKsuOkOQtgy9AA64fNRaJDcm-yEC4" type="text/javascript"></script>-->
+
+</head>
+
+
+<body>
+<div class="sidebar" data-anchor-target="#footer" data-300-bottom="bottom:180px;"
+     data-bottom-top="bottom:280px;">
+    
+    <a class="home" href="/">Z</a>
+    <div class="widget">
+        <h5><a href="#">Cities</a></h5>
+        <div class="tags" id="category">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/上海/">上海</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/北京/">北京</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/南京/">南京</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+    
+    
+    <div class="widget">
+        <h5><a href="#">Tags</a></h5>
+        <div class="tags" id="tag">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-life/">work,life</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+    
+    <div class="widget">
+        <h5><a href="/archives">Archives</a></h5>
+    </div>
+</div>
+
+<div class="post fullpage" id="full_post">
+    <div class="time_dot_date">
+        2016-04-24
+    </div>
+    <div class="full">
+        <div class="figure">
+            <div class="bg_img" style="background-image: url('/1.jpg')"></div>
+        </div>
+        <article class="article">
+            <h2><a href="/2016/04/24/Hapi-and-Es6-Config/">Hapi and Es6 Config</a></h2>
+            <span class="post_date" datetime="2016-04-24 23:42:05"></span>
+            <section>
+                
+                <h3 id="Hapi-项目初始化。"><a href="#Hapi-项目初始化。" class="headerlink" title="Hapi 项目初始化。"></a>Hapi 项目初始化。</h3><ol>
+<li><p>npm init自动创建一个项目，生成package.json文件。<a id="more"></a></p>
+</li>
+<li><p>新建配置文件.babelrc，</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-preset-es2015</span><br><span class="line"></span><br><span class="line">$ npm install --save-dev babel-preset-react</span><br><span class="line"></span><br><span class="line"># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</span><br><span class="line">$ npm install --save-dev babel-preset-stage-0</span><br><span class="line">$ npm install --save-dev babel-preset-stage-1</span><br><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br><span class="line">$ npm install --save-dev babel-preset-stage-3</span><br></pre></td></tr></table></figure>
+<p>然后将这些规则加入到.babelrc文件中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="string">"presets"</span>: [</span><br><span class="line">     <span class="string">"es2015"</span>,</span><br><span class="line">     <span class="string">"react"</span>,</span><br><span class="line">     <span class="string">"stage-1"</span></span><br><span class="line">   ],</span><br><span class="line">   <span class="string">"plugins"</span>: []</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>安装babel-register，就可以改写require命令，新建babel.js，写入：</li>
+</ol>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> babel-register</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'babel-register'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="built_in">require</span>(<span class="string">'./server.js'</span>);</span><br></pre></td></tr></table></figure>
+<p>这样后面的文件就可以用import 代替require，import的优点在于可以引入所需方法或者变量，而不需要加载整个模块，提高了性能。</p>
+<ol>
+<li>transform-runtime可以启用相应的es6语法插件。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-transform-runtime</span><br></pre></td></tr></table></figure>
+<ol>
+<li>安装eslint插件用于静态检查代码的语法和风格，</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev eslint babel-eslint</span><br></pre></td></tr></table></figure>
+<p>然后在根目录下新建一个.eslintrc配置文件，写入:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>指定解析器parser是babel-eslint。
+
+rules写的是自定义eslint规则，具体参考官方文档。
+
+另外还需要指定环境，这里的环境env是node和es6，指定为true。
+
+.eslintrc格式可以有多种，分别为javascript格式：.eslintrc.js
+
+YAML格式：.eslintrc.yml（建议）
+
+JSON格式：.eslintrc.json（建议）
+
+.eslintrc,可以使json也可以是yaml
+
+也可以在package.json里面用eslintConfig配置。
+
+还可以添加扩展extends，比如添加自己喜爱的airbnb/base代码规范，这样rules里面的配置将覆盖扩展里面的父规则。
+
+创建.eslintignore可以忽略指定文件的代码检查。
+</code></pre><ol>
+<li>我们在使用 Git 进行版本控制的时候，有些文件是无需纳入 Git 管理的，通常都是些自动 生成的文件，像日志或者编译过程中创建的文件。我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件来解决这个问题。</li>
+</ol>
+
+                
+            </section>
+            <section class="meta">
+                城市: 
+                , 标签: 
+            </section>
+        </article>
+    </div>
+    <!-- 多说评论框 start -->
+    	<div class="ds-thread" data-thread-key="http://bishe.suzper.com/2016/04/24/Hapi-and-Es6-Config/" data-title="Hapi and Es6 Config" data-url="http://bishe.suzper.com/2016/04/24/Hapi-and-Es6-Config/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bishe"};
+    	(function() {
+    		var ds = document.createElement('script');
+    		ds.type = 'text/javascript';ds.async = true;
+    		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    		ds.charset = 'UTF-8';
+    		(document.getElementsByTagName('head')[0]
+    		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+    	})();
+    	</script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+
+<footer class="footer" id="footer">
+  <p><a href="">Candy.Zheng</a> &copy;  
+    2016 All Rights Reserved. </p>
+  <p><small>Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons 署名-非商业性使用 4.0" rel="license">CC BY-NC 4.0</a></small></p>
+</footer>
+</body>
+</html>
