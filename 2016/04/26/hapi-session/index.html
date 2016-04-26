@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hapi-session | where and when</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用hapi自带的session缓存机制HAPI  session缓存机制将用户名存在cookie的session键里面，客户的读取from的时候使用$.cookie(‘session’)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hapi-session">
+<meta property="og:url" content="http://bishe.suzper.com/2016/04/26/hapi-session/index.html">
+<meta property="og:site_name" content="where and when">
+<meta property="og:description" content="使用hapi自带的session缓存机制HAPI  session缓存机制将用户名存在cookie的session键里面，客户的读取from的时候使用$.cookie(‘session’)。">
+<meta property="og:updated_time" content="2016-04-26T08:24:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hapi-session">
+<meta name="twitter:description" content="使用hapi自带的session缓存机制HAPI  session缓存机制将用户名存在cookie的session键里面，客户的读取from的时候使用$.cookie(‘session’)。">
+  
+  
+  <link rel="icon" href="/favicon.jpg">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/instantpjax.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
+  <script src="/js/js.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ycrNGzdrd6D7s95M05rFVZqc"></script>
+  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-OzzKsuOkOQtgy9AA64fNRaJDcm-yEC4" type="text/javascript"></script>-->
+
+</head>
+
+
+<body>
+<div class="sidebar" data-anchor-target="#footer" data-300-bottom="bottom:180px;"
+     data-bottom-top="bottom:280px;">
+    
+    <a class="home" href="/">Z</a>
+    <div class="widget">
+        <h5><a href="#">Cities</a></h5>
+        <div class="tags" id="category">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/上海/">上海</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/北京/">北京</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/南京/">南京</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+    
+    
+    <div class="widget">
+        <h5><a href="#">Tags</a></h5>
+        <div class="tags" id="tag">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hapi/">hapi</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-life/">work,life</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+    
+    <div class="widget">
+        <h5><a href="/archives">Archives</a></h5>
+    </div>
+</div>
+
+<div class="post fullpage" id="full_post">
+    <div class="time_dot_date">
+        2016-04-26
+    </div>
+    <div class="full">
+        <div class="figure">
+            <div class="bg_img" style="background-image: url('/1.jpg')"></div>
+        </div>
+        <article class="article">
+            <h2><a href="/2016/04/26/hapi-session/">hapi-session</a></h2>
+            <span class="post_date" datetime="2016-04-26 16:22:02"></span>
+            <section>
+                
+                <h3 id="使用hapi自带的session缓存机制"><a href="#使用hapi自带的session缓存机制" class="headerlink" title="使用hapi自带的session缓存机制"></a>使用hapi自带的session缓存机制</h3><h4 id="HAPI-session缓存机制"><a href="#HAPI-session缓存机制" class="headerlink" title="HAPI  session缓存机制"></a>HAPI  session缓存机制</h4><p>将用户名存在cookie的session键里面，客户的读取from的时候使用$.cookie(‘session’)。<a id="more"></a><br>server.state,定义一个名字为session的cookie</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server.state(<span class="string">'session'</span>, &#123;</span><br><span class="line">ttl: <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>, <span class="comment">// One day</span></span><br><span class="line">isSecure: <span class="literal">false</span>, <span class="comment">//暂时不考虑使用安全连接</span></span><br><span class="line">path: <span class="string">'/'</span> <span class="comment">//暂时不转码session</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p>在/signin路由里面设置handler</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> session = request.state.session;</span><br><span class="line"><span class="keyword">if</span> (!session) &#123;</span><br><span class="line">session = username;</span><br><span class="line">&#125;</span><br><span class="line">session.last = <span class="built_in">Date</span>.now();</span><br><span class="line"><span class="keyword">return</span> reply.redirect(<span class="string">'/'</span>).state(<span class="string">'session'</span>, session);<span class="comment">//存入session</span></span><br></pre></td></tr></table></figure>
+<h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>创建数据库candy，新建表users，字段为id自增，username用户名，password密码。</p>
+<h4 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h4><ul>
+<li>验证用户名是否已经存在，如果存在则重定向到注册页。</li>
+<li>用户名不存在，注册成功，存入session，自动登录。</li>
+</ul>
+
+                
+            </section>
+            <section class="meta">
+                城市: <a class="category-link" href="/categories/南京/">南京</a>
+                , 标签: <a class="tag-link" href="/tags/hapi/">hapi</a>
+            </section>
+        </article>
+    </div>
+    <!-- 多说评论框 start -->
+    	<div class="ds-thread" data-thread-key="http://bishe.suzper.com/2016/04/26/hapi-session/" data-title="hapi-session" data-url="http://bishe.suzper.com/2016/04/26/hapi-session/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bishe"};
+    	(function() {
+    		var ds = document.createElement('script');
+    		ds.type = 'text/javascript';ds.async = true;
+    		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    		ds.charset = 'UTF-8';
+    		(document.getElementsByTagName('head')[0]
+    		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+    	})();
+    	</script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+
+<footer class="footer" id="footer">
+  <p><a href="">Candy.Zheng</a> &copy;  
+    2016 All Rights Reserved. </p>
+  <p><small>Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons 署名-非商业性使用 4.0" rel="license">CC BY-NC 4.0</a></small></p>
+</footer>
+</body>
+</html>

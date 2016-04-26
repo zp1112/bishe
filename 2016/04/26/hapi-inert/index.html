@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hapi-inert | where and when</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建视图文件hapi静态文件渲染机制：
+引入插件inert用于处理静态文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hapi-inert">
+<meta property="og:url" content="http://bishe.suzper.com/2016/04/26/hapi-inert/index.html">
+<meta property="og:site_name" content="where and when">
+<meta property="og:description" content="创建视图文件hapi静态文件渲染机制：
+引入插件inert用于处理静态文件">
+<meta property="og:updated_time" content="2016-04-26T08:21:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hapi-inert">
+<meta name="twitter:description" content="创建视图文件hapi静态文件渲染机制：
+引入插件inert用于处理静态文件">
+  
+  
+  <link rel="icon" href="/favicon.jpg">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/instantpjax.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
+  <script src="/js/js.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ycrNGzdrd6D7s95M05rFVZqc"></script>
+  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-OzzKsuOkOQtgy9AA64fNRaJDcm-yEC4" type="text/javascript"></script>-->
+
+</head>
+
+
+<body>
+<div class="sidebar" data-anchor-target="#footer" data-300-bottom="bottom:180px;"
+     data-bottom-top="bottom:280px;">
+    
+    <a class="home" href="/">Z</a>
+    <div class="widget">
+        <h5><a href="#">Cities</a></h5>
+        <div class="tags" id="category">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/上海/">上海</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/北京/">北京</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/南京/">南京</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+    
+    
+    <div class="widget">
+        <h5><a href="#">Tags</a></h5>
+        <div class="tags" id="tag">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hapi/">hapi</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-life/">work,life</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+    
+    <div class="widget">
+        <h5><a href="/archives">Archives</a></h5>
+    </div>
+</div>
+
+<div class="post fullpage" id="full_post">
+    <div class="time_dot_date">
+        2016-04-26
+    </div>
+    <div class="full">
+        <div class="figure">
+            <div class="bg_img" style="background-image: url('/socket.png')"></div>
+        </div>
+        <article class="article">
+            <h2><a href="/2016/04/26/hapi-inert/">hapi-inert</a></h2>
+            <span class="post_date" datetime="2016-04-26 16:07:50"></span>
+            <section>
+                
+                <h3 id="创建视图文件"><a href="#创建视图文件" class="headerlink" title="创建视图文件"></a>创建视图文件</h3><p>hapi静态文件渲染机制：</p>
+<p>引入插件inert用于处理静态文件<a id="more"></a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> hapi.Server(&#123;</span><br><span class="line">connections: &#123;</span><br><span class="line">routes: &#123;</span><br><span class="line">files: &#123;</span><br><span class="line">relativeTo: path.join(__dirname, <span class="string">'public'</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server.route(&#123;</span><br><span class="line">method: <span class="string">'GET'</span>,</span><br><span class="line">path: <span class="string">'/&#123;param*&#125;'</span>,</span><br><span class="line">handler: &#123;</span><br><span class="line">directory: &#123;</span><br><span class="line">path: <span class="string">'.'</span>,</span><br><span class="line">redirectToSlash: <span class="literal">true</span>,</span><br><span class="line">index: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>引入插件vision用于渲染静态页面<br>引入插件handlebars用于模板引擎</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server.views(&#123;</span><br><span class="line">path: <span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/views`</span>,</span><br><span class="line">engines: &#123; html: handlebars &#125;,</span><br><span class="line">isCached: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上都可以在npmjs官网查看详细文档。</p>
+<p>views文件夹下面存放index.html和signin.html和signup.html。</p>
+
+                
+            </section>
+            <section class="meta">
+                城市: <a class="category-link" href="/categories/南京/">南京</a>
+                , 标签: <a class="tag-link" href="/tags/hapi/">hapi</a>
+            </section>
+        </article>
+    </div>
+    <!-- 多说评论框 start -->
+    	<div class="ds-thread" data-thread-key="http://bishe.suzper.com/2016/04/26/hapi-inert/" data-title="hapi-inert" data-url="http://bishe.suzper.com/2016/04/26/hapi-inert/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bishe"};
+    	(function() {
+    		var ds = document.createElement('script');
+    		ds.type = 'text/javascript';ds.async = true;
+    		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    		ds.charset = 'UTF-8';
+    		(document.getElementsByTagName('head')[0]
+    		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+    	})();
+    	</script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+
+<footer class="footer" id="footer">
+  <p><a href="">Candy.Zheng</a> &copy;  
+    2016 All Rights Reserved. </p>
+  <p><small>Licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons 署名-非商业性使用 4.0" rel="license">CC BY-NC 4.0</a></small></p>
+</footer>
+</body>
+</html>
