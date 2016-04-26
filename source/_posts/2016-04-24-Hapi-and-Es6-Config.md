@@ -1,10 +1,10 @@
 title: Hapi and Es6 Config
 date: 2016-04-24 23:42:05
-categories:
-city:
-tags:
-type:
-banner:
+categories: 南京
+city: 南京
+tags: hapi
+type: right
+banner: /hapi.png
 ---
 ### Hapi 项目初始化。
 

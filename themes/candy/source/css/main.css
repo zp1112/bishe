@@ -553,7 +553,7 @@ a {
 .widget:before{
     content: '';
     width: 1px;
-    height: 130px;
+    height: 100%;
     position: absolute;
     left: 46px;
     top: 8px;
