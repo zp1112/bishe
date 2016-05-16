@@ -485,10 +485,7 @@ a {
 
 .paginator {
     text-align: center;
-    position: fixed;
     z-index: 130;
-    left: 80px;
-    bottom: 77px;
 }
 
 .page-number {
@@ -497,7 +494,6 @@ a {
     height: 25px;
     background: #9a8c80;
     line-height: 25px;
-    float: left;
     margin: 10px;
 
 }
